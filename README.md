@@ -120,6 +120,31 @@ Creating the project?
 - Setup postgresql
 - create DB
 
+Included Devise in the Gemfile
+```
+gem 'devise'
+```
+Then run
+```
+bundle install
+```
+Add the following code to the mailer section of /config/environments/development.rb
+```
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+```
+
+Include Rspec in the Gemfile (in group :development, :test)
+```
+gem 'rspec-rails', '~> 3.6'
+```
+Run bundle install
+```
+bundle install
+```
+Initialise Rspec
+```
+rails generate rspec:install
+```
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

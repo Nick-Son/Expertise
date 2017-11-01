@@ -137,14 +137,22 @@ Include Rspec in the Gemfile (in group :development, :test)
 ```
 gem 'rspec-rails', '~> 3.6'
 ```
+
 Run bundle install
 ```
 bundle install
 ```
+
 Initialise Rspec
 ```
 rails generate rspec:install
 ```
+
+Add dotenv to Gemfile. This must be at the top of the Gemfile
+```
+gem 'dotenv-rails', groups: [:development, :test]
+```
+
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

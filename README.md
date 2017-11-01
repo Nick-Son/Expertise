@@ -153,6 +153,30 @@ Add dotenv to Gemfile. This must be at the top of the Gemfile
 gem 'dotenv-rails', groups: [:development, :test]
 ```
 
+Add shrine gem and it's depedencies
+```
+# Shrine Dependencies
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'shrine'
+```
+Start Postgres server
+```
+# for Arch Linux
+sudo systemctl start postgresql
+```
+
+Create Database
+```
+rails db:create
+```
+
+Create User (using devise)
+```
+rails g devise User
+```
+
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

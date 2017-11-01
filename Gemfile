@@ -35,6 +35,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
+
+# Shrine Dependencies
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'shrine'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

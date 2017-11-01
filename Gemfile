@@ -33,14 +33,18 @@ gem 'jbuilder', '~> 2.5'
 
 # For User model/Authentication
 gem 'devise'
+# For bootstrap
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 
-# Shrine Dependencies
+# Shrine & Dependencies
 gem 'fastimage'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
+
+# AWS
+gem 'aws-sdk', '~> 3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

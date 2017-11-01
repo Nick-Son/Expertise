@@ -2,34 +2,49 @@
 
 *slogan/description*
 
-### Getting Started
+## Brief
 
-## Prerequisites
+## What is *'Expertise'*?
 
-## Installing
+## Planning
+<link to Trello>
 
-### Testing
+## User Stories
 
-## End to End Tests
+## Data Structure
+<erd image>
 
-## Coding Style Tests
+### Models
 
-### Deployment
+## Design
+
+### Style Guide | Research
+<image of style guide>
+
+<link to pintrest?>
+
+## Wireframes
+<image of wireframes>
+
+<link to figma>
+
+## Production
+
+## Getting Started
+
+## Technologies Used
+
+### Gems/APIs
+
+### Installing
+First install required gems:
+
+
+## Deployment
 Add additional notes about how to deploy this on a live system
 
-### Built With
-- Dropwizard - The web framework used
-- Maven - Dependency Management
-- ROME - Used to generate RSS Feeds
 
-### Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-### Authors
-
-### License
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-### Acknowledgments
+## Acknowledgments
 
 

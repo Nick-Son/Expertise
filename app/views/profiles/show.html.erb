@@ -21,7 +21,12 @@
     <%= @profile.avatar_data %>
   </p>
 
+<% if @profile.user = current_user %>
   <%= link_to 'Inbox', conversations_path %> |
   <%= link_to 'Edit', edit_profile_path(@profile) %> |
   <%= link_to 'Back', profiles_path %>
+<% else %>
+  <%= link_to 'Back', profiles_path %>
+<% end %>  
+  
 </div>

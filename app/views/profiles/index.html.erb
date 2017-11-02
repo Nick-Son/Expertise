@@ -6,13 +6,13 @@
 
 
   <% @profiles.each do |profile| %>
+  
     <div class="profile-box">
 
       <p><%= profile.first_name %> <%= profile.last_name %></p>
       <td><%= profile.bio %></td>
       <td><%= profile.avatar_data %></td>
       <td><%= link_to 'Show', profile %></td>
-      <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
   
     </div>
   <% end %>

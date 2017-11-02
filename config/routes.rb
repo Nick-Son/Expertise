@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'pages#home'
+  
   resources :profiles
   devise_for :users
   #set 'root'

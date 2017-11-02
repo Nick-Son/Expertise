@@ -177,6 +177,16 @@ Create User (using devise)
 rails g devise User
 ```
 
+Add AWS-sdk gem to the Gemfile
+```
+gem 'aws-sdk', '~> 3'
+```
+```
+bundle install
+```
+
+Then set up a new bucket and user.
+Add credentials and bucket information to .env file
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

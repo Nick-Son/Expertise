@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="profile-main-container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+  <div class="image-box">
+    
+  </div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
+  <h2>
+    <strong>
+      <%= @profile.first_name %> <%= @profile.last_name %>
+    </strong>  
+  </h2>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
-</p>
+  <p>
+    <strong>Bio:</strong>
+    <%= @profile.bio %>
+  </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
+  <p>
+    <strong>Avatar data:</strong>
+    <%= @profile.avatar_data %>
+  </p>
 
-<p>
-  <strong>Avatar data:</strong>
-  <%= @profile.avatar_data %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'Back', profiles_path %>
+</div>

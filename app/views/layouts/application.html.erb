@@ -9,11 +9,11 @@
   </head>
 
   <body>
-    <!-- Flash messages -->
-    <%= render 'layouts/messages' %>
     <!-- Login/Sign up options if not logged in | Welcome message if logged in  -->
     <%= render 'layouts/login'%>
-    
+    <!-- Flash messages -->
+    <%= render 'layouts/messages' %>
+
     <%= yield %>
   </body>
 </html>

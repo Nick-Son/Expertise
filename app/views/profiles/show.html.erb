@@ -1,4 +1,5 @@
 <div class="profile-main-container">
+  <%= hidden_field :id, @user_2 %>
   <p id="notice"><%= notice %></p>
 
   <div class="image-box">
@@ -11,6 +12,12 @@
     </strong>  
   </h2>
 
+  <!-- continue conversation button -->
+  <% if @profile.user != current_user %>
+    <%= link_to 'Continue Conversation', conversations_path, class:"btn btn-primary"%> |
+    <%= link_to 'Contact', new_conversation_path, class:"btn btn-primary"%>
+  <% end %>
+
   <p>
     <strong>Bio:</strong>
     <%= @profile.bio %>
@@ -21,12 +28,12 @@
     <%= @profile.avatar_data %>
   </p>
 
-<% if @profile.user = current_user %>
-  <%= link_to 'Inbox', conversations_path %> |
-  <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%= link_to 'Back', profiles_path %>
-<% else %>
-  <%= link_to 'Back', profiles_path %>
-<% end %>  
+  <% if @profile.user == current_user %>
+    <%= link_to 'Inbox', conversations_path %> |
+    <%= link_to 'Edit', edit_profile_path(@profile) %> |
+    <%= link_to 'Back', profiles_path %>
+  <% else %>
+    <%= link_to 'Back', profiles_path %>
+  <% end %>  
   
 </div>

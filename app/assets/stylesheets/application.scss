@@ -1,14 +1,29 @@
 @import "bootstrap";
 
+.login {
+  color: white;
+}
+
+.message-box {
+  margin-top: 100px;
+  padding: 10px;
+  border: 1px solid cadetblue;
+}
+
+.sign-up-container {
+  width: 500px;
+  border: 1px solid cadetblue;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+// Profile css //
+
 .profile-box {
   border: 1px solid cadetblue;
   width: 500px;
   padding: 10px;
   margin: 20px;
-}
-
-.login {
-  color: white;
 }
 
 .profile-main-container {
@@ -23,4 +38,52 @@
   height: 250px;
   border: 1px solid black;
   margin: 20px;
+}
+
+// Conversation css //
+.convos {
+  margin: 0 auto;
+  display: flex;
+  // flex-wrap: wrap;
+  max-width: 500px;
+}
+
+.convo-box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid cadetblue;
+  margin: 10px;
+  padding: 20px;
+  // flex: 1;
+  border-radius: 5px;
+}
+
+.convo-text {
+  padding: 5px;
+  background: cadetblue;
+  color: white;
+  border-radius: 5px;
+}
+
+// Messages css //
+
+.messages-container {
+  width: 700px;
+  border: 1px solid dodgerblue;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.message-box-a {
+  border: 1px solid cadetblue;
+  padding: 10px;
+  margin: 20px 0 20px 100px;
+  width: 500px;
+}
+
+.message-box-b {
+  border: 1px solid coral;
+  padding: 10px;
+  margin: 20px;
+  width: 500px;
 }

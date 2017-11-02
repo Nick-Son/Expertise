@@ -1,0 +1,25 @@
+<h1>Conversations</h1>
+
+  <div class="convos">
+    <% @conversations.each do |conversation| %>
+      <%= link_to conversation_messages_path(conversation), class: "div-link" do %>
+        <div>
+          <div class="convo-box">
+            <p class="convo-p"><%= other_user(conversation) %></p>
+            <div class="convo-text">
+              <p class="convo-p"><em>'<%= (conversation.messages.last.body) %>'</em></p>
+            </div > 
+          </div>
+        </div>  
+      <% end %> 
+    <% end %>
+    <%= link_to new_conversation_path do %>
+      <div>
+        <div class="convo-box">
+        <h4>New Conversation</h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<!-- .truncate(45, separator: ' ') -->

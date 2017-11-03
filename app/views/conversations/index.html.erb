@@ -7,7 +7,11 @@
           <div class="convo-box">
             <p class="convo-p"><%= other_user(conversation) %></p>
             <div class="convo-text">
-              <p class="convo-p"><em>'<%= (conversation.messages.last.body) %>'</em></p>
+              <% if conversation.messages.last %>
+                <p class="convo-p"><em>'<%= (conversation.messages.last.body) %>'</em></p>
+              <% else %>
+                <p class="convo-p"><em> No messages </em></p>  
+              <% end %>
             </div > 
           </div>
         </div>  

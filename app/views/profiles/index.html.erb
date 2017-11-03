@@ -1,17 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
-
-
-
+<h1>Experts</h1>
 
   <% @profiles.each do |profile| %>
   
     <div class="profile-box">
+      <figure class="image-box">
+        <!-- If there is an avatar image present in the profile -->
+        <% if profile.avatar.present? %>
+          <%= image_tag profile.avatar_url(:thumb), alt: "Profile photo for #{profile.first_name} #{profile.last_name}" %>
+        <% else %>
+        <!-- If not present, display default profile image -->
+        <img src="<%= asset_url('profile.png') %>" />
+          <% end %>  
+      </figure>
 
       <p><%= profile.first_name %> <%= profile.last_name %></p>
       <td><%= profile.bio %></td>
-      <td><%= profile.avatar_data %></td>
       <td><%= link_to 'Show', profile %></td>
   
     </div>

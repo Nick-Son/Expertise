@@ -3,6 +3,8 @@ class MessagesController < ApplicationController
   before_action :set_conversation
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   
+  
+
   def index
     @messages = Message.where(conversation_id: @conversation)
     @message = Message.new

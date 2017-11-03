@@ -1,11 +1,13 @@
 <div class="profile-main-container">
-  <%= hidden_field :id, @user_2 %>
+
   <p id="notice"><%= notice %></p>
 
   <figure class="image-box">
+    <!-- If there is an avatar image present in the profile -->
     <% if @profile.avatar.present? %>
       <%= image_tag @profile.avatar_url(:thumb), alt: "Profile photo for #{@profile.first_name} #{@profile.last_name}" %>
     <% else %>
+      <!-- If not present, display default profile image -->
       <img src="<%= asset_url('profile.png') %>" />
     <% end %>  
   </figure>
@@ -16,10 +18,15 @@
     </strong>  
   </h2>
 
-  <!-- continue conversation button -->
-  <% if @profile.user != current_user %>
+  <!-- continue conversation button 
     <%= link_to 'Continue Conversation', conversations_path, class:"btn btn-primary"%> |
-    <%= link_to 'Contact', new_conversation_path, class:"btn btn-primary"%>
+    <%= link_to 'Contact', conversations_path(user_2: @profile, method: :post), class:"btn btn-primary" %>
+-->
+  <% if @profile.user != current_user %>
+    <%= form_with model: @conversation, local: true do |f| %>
+        <%= f.hidden_field :user2_id, value: @profile.id  %>
+        <%= f.submit 'Contact', class:"btn btn-primary" %>
+    <% end %>
   <% end %>
 
   <p>

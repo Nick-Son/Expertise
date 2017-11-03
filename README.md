@@ -194,4 +194,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Acknowledgments
 
-
+  <div class="field">
+    <%= form.label :user2_id, "whom do you want to message?" %>
+    <%= form.collection_select :user2_id, User.where.not(id: current_user), :id, :email, id: :conversation_user2_id %>
+  </div>

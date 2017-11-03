@@ -2,9 +2,13 @@
   <%= hidden_field :id, @user_2 %>
   <p id="notice"><%= notice %></p>
 
-  <div class="image-box">
-    
-  </div>
+  <figure class="image-box">
+    <% if @profile.avatar.present? %>
+      <%= image_tag @profile.avatar_url(:thumb), alt: "Profile photo for #{@profile.first_name} #{@profile.last_name}" %>
+    <% else %>
+      <img src="<%= asset_url('profile.png') %>" />
+    <% end %>  
+  </figure>
 
   <h2>
     <strong>
@@ -23,10 +27,6 @@
     <%= @profile.bio %>
   </p>
 
-  <p>
-    <strong>Avatar data:</strong>
-    <%= @profile.avatar_data %>
-  </p>
 
   <% if @profile.user == current_user %>
     <%= link_to 'Inbox', conversations_path %> |

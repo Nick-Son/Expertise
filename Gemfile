@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 
 # For User model/Authentication
 gem 'devise'
+# For Authorisation
+gem 'pundit'
 # For bootstrap
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'

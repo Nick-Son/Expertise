@@ -1,7 +1,13 @@
 <form class="login">
   <% if user_signed_in? %>
     Hello <strong> (<%= current_user.email %>)</strong>
-    <%= link_to('Profile', profile_path(current_user), class: "btn btn-primary") %> 
+
+    <% if current_user.profile.nil? %>
+      <%= link_to('Profile', new_profile_path(current_user), class: "btn btn-primary") %> 
+    <% else %>
+      <%= link_to('Profile', profile_path(current_user), class: "btn btn-primary") %> 
+    <% end %>
+
     <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary"  %>
   <% else %>
     <%= link_to('Sign up', new_user_registration_path, class: "btn btn-primary") %> 

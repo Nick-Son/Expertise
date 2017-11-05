@@ -1,9 +1,9 @@
 class ConversationPolicy < ApplicationPolicy
 
-  def index
-    if @conversations.user1_id == current_user_id
+  def index?
+    if user.id == record.user1_id
       true
-    elsif @conversations.user2_id == current_user_id
+    elsif user.id == record.user2_id
       true
     else
       false

@@ -22,7 +22,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    #authorize @profile
+    #@profile = Profile.find(params[:id])
+    authorize @profile
   end
 
   # POST /profiles

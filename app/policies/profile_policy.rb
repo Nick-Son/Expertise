@@ -1,7 +1,7 @@
 class ProfilePolicy < ApplicationPolicy
 
-  def edit
-    if  @profile.user == current_user
+  def update?
+    if  user.profile == record.user
       true
     else
       false

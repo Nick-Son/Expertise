@@ -1,5 +1,6 @@
 class ProfilePolicy < ApplicationPolicy
 
+
   def update?
     if  user.profile == record.user
       true

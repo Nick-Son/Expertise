@@ -220,3 +220,20 @@ Add additional notes about how to deploy this on a live system
     <%= form.label :user2_id, "whom do you want to message?" %>
     <%= form.collection_select :user2_id, User.where.not(id: current_user), :id, :email, id: :conversation_user2_id %>
   </div>
+
+## checklist
+*Create your application using Ruby on Rails.*
+*Demonstrate knowledge of Rails conventions.*
+*Use postgresql database in development.*
+Use an API (eg. Omniauth, Geocoding, Maps, other..).
+*Use appropriate gems.*
+*Use environmental variables to protect API keys etc. (dotenv)*
+Implement a payment system for your product. (e.g. Stripe)
+Your app must send transactional emails (eg. using Mailgun).
+*Your app should have an internal user messaging system.*
+Your app will have some type of searching, sorting and/or filtering capability.
+*Your app will have some type of file uploading capability (eg. images).*
+*Your app will have authentication (eg. Devise, must have full functionality in place).*
+Your app will have authorisation (users have restrictions on what they can see and edit).
+Your app will have an admin dashboard for the admin user to administrate the site.
+*Document your application with a README that explains how to setup, configure and use your application.*

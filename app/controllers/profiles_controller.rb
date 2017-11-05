@@ -2,6 +2,8 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+ 
+
   # GET /profiles
   # GET /profiles.json
   def index
@@ -23,7 +25,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     #@profile = Profile.find(params[:id])
-    authorize @profile
+    #authorize @profile
   end
 
   # POST /profiles

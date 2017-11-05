@@ -3,10 +3,12 @@ class ConversationsController < ApplicationController
   before_action :set_conversation, only: [:show, :edit, :update, :destroy]
 
   def index
+    
     @as_user_1 = Conversation.where(user1: current_user)
     @as_user_2 = Conversation.where(user2: current_user)
 
     @conversations = @as_user_1 | @as_user_2
+    #authorize @conversations
   end
 
   def new

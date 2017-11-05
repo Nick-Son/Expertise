@@ -208,6 +208,7 @@ Include pundit in Gemfile
 ```
 gem 'pundit'
 ```
+Restart Rails server
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

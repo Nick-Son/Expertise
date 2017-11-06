@@ -1,0 +1,21 @@
+<h1>Support</h1>
+
+<h3>Need some help <%= current_user.email %>?</h3>
+<p>Send our friendly staff a message</p>
+
+<!-- Display error messages if present -->
+<% unless @error_messages.empty?  %>
+  <% @error_messages.each do |message| %>
+    <p class="error-message-p"><%= message %></p>
+  <% end %>
+<% end %>
+  
+
+
+<%= form_with(url: support_url, local: true) do |f| %>
+  <div>
+    <%= f.label :message %>
+    <%= f.text_area :message, rows: 6 %>
+  </div>
+    <%= f.button 'Send' %>
+<% end %>

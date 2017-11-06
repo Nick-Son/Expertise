@@ -17,6 +17,26 @@
   margin: 10px auto;
 }
 
+.error-message-p {
+  color: red;
+  border: 1px solid red;
+  background: rgb(245, 170, 170);
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.success-message-p {
+  color: green;
+  border: 1px solid green;
+  background: rgb(198, 245, 170);
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+}
+
 // Profile css //
 
 .profile-box {

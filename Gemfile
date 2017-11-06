@@ -38,6 +38,8 @@ gem 'pundit'
 # For bootstrap
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
+# Mailgun
+gem 'mailgun-ruby', '~>1.1.6'
 
 # Shrine & Dependencies
 gem 'fastimage'

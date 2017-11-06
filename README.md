@@ -209,6 +209,29 @@ Include pundit in Gemfile
 gem 'pundit'
 ```
 Restart Rails server
+
+*pundit installation info? generating? initializing? policies?*
+
+Include mailgun gem in Gemfile
+```
+gem 'mailgun-ruby', '~>1.1.6'
+```
+Bundle install
+
+Add the following to the development.rb in the mailer section:
+```
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV.fetch('MAILGUN_API_KEY'),
+    domain: ENV.fetch('MAILGUN_DOMAIN'),
+  }
+```
+We need to add our mailgun credentials to our .env file
+```
+MAILGUN_API_KEY = apikey********************
+MAILGUN_DOMAIN = domain*****************
+```
+
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

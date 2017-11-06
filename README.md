@@ -226,10 +226,12 @@ Add the following to the development.rb in the mailer section:
     domain: ENV.fetch('MAILGUN_DOMAIN'),
   }
 ```
-We need to add our mailgun credentials to our .env file
+We need to add our mailgun credentials, and a support email address to our .env file
 ```
 MAILGUN_API_KEY = apikey********************
 MAILGUN_DOMAIN = domain*****************
+
+SUPPORT_EMAIL = email@example.com
 ```
 
 ## Deployment

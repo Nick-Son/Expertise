@@ -13,6 +13,12 @@
 
 
 <%= form_with(url: support_url, local: true) do |f| %>
+  <!-- text field for title -->
+  <div>
+    <%= f.label :title, 'Whats the issue?' %>
+    <%= f.text_field :title %>
+  </div>
+
   <div>
     <%= f.label :message %>
     <%= f.text_area :message, rows: 6 %>

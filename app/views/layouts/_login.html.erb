@@ -1,15 +1,21 @@
 <form class="login">
   <% if user_signed_in? %>
-    Hello <strong> (<%= current_user.email %>)</strong>
-    <!-- if the current user doesn't have a profile, we create one -->
+    <!-- if the current user doesn't have a profile -->
     <% if current_user.profile.nil? %>
+      <!-- Display a hello message using the user's email address -->
+      Hello <strong> <%= current_user.email %>!</strong>
+      <!-- Create a new profile -->
       <%= link_to('Profile', new_profile_path(current_user), class: "btn btn-primary") %> 
     <% else %>
-    <!-- They do have a profile, so show it -->
+      <!-- Display a hello message using the user's first name -->
+      Hello <strong> <%= current_user.profile.first_name %>!</strong>
+      <!-- They do have a profile, so show it -->
       <%= link_to('Profile', profile_path(current_user), class: "btn btn-primary") %> 
     <% end %>
+    <!-- wether or not the user has a profile or not, the logout button will always be displayed if a user is logged in -->
     <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary"  %>
   <% else %>
+    <!-- If no user is logged in, allow the user to either sign up or login -->
     <%= link_to('Sign up', new_user_registration_path, class: "btn btn-primary") %> 
     <%= link_to('Login', new_user_session_path, class: "btn btn-primary") %>
   <% end %>

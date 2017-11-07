@@ -1,27 +1,34 @@
-<h1>Support</h1>
+<div class="support-container">
 
-<h3>Need some help <%= current_user.profile.first_name %>?</h3>
-<p>Send our friendly staff a message</p>
+  <div class="support-header">
+    <h1>Support</h1>
+      <br>
+    <h3>Need some help <%= current_user.profile.first_name %>?</h3>
+    <p>Send our friendly staff a message</p>
+  </div>
 
-<!-- Display error messages if present -->
-<% unless @error_messages.empty?  %>
-  <% @error_messages.each do |message| %>
-    <p class="error-message-p"><%= message %></p>
+  <!-- Display error messages if present -->
+  <% unless @error_messages.empty?  %>
+    <% @error_messages.each do |message| %>
+      <p class="error-message-p"><%= message %></p>
+    <% end %>
   <% end %>
-<% end %>
-  
+    
 
 
-<%= form_with(url: support_url, local: true) do |f| %>
-  <!-- text field for title -->
-  <div>
-    <%= f.label :title, 'Whats the issue?' %>
-    <%= f.text_field :title %>
-  </div>
+  <%= form_with(url: support_url, local: true) do |f| %>
+    <!-- text field for title -->
+    <div>
+      <p><%= f.label :title, 'Whats the issue?' %></p>
+      <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <br>
 
-  <div>
-    <%= f.label :message %>
-    <%= f.text_area :message, rows: 6 %>
-  </div>
-    <%= f.button 'Send' %>
-<% end %>
+    <div>
+      <p><%= f.label :message %></p>
+      <%= f.text_area :message, class:"form-control noresize", rows: 6 %>
+    </div>
+    <br>
+      <%= f.button 'Send' %>
+  <% end %>
+</div>

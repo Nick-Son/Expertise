@@ -10,13 +10,6 @@
   border: 1px solid cadetblue;
 }
 
-.sign-up-container {
-  width: 500px;
-  border: 1px solid cadetblue;
-  padding: 10px;
-  margin: 10px auto;
-}
-
 .error-message-p {
   color: red;
   border: 1px solid red;
@@ -102,6 +95,7 @@
 
 .noresize {
   resize: none;
+  overflow-x:hidden;
 }
 
 .message-box-a {
@@ -131,4 +125,55 @@
 .message-content {
   padding: 10px;
 
+}
+
+// Sign up page
+
+.sign-up-container {
+  width: 500px;
+  border: 1px solid cadetblue;
+  padding: 10px;
+  margin: 50px auto;
+  text-align: center;
+}
+.field {
+  margin: 30px;
+  padding: 5px;
+}
+
+.have-account-box {
+  border: 1px solid cadetblue;
+  padding: 10px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+// Edit page
+
+.edit-page-container {
+  width: 700px;
+  border: 1px solid cadetblue;
+  margin: 20px auto;
+  padding: 15px;
+
+}
+
+// Profile-index
+
+.profiles-index-container {
+  display: flex;
+  padding: 50px;
+}
+
+// Support page
+
+.support-container {
+  width: 700px;
+  border: 1px solid cadetblue;
+  margin: 30px auto;
+  padding: 15px;
+}
+
+.support-header {
+  text-align: center;
 }

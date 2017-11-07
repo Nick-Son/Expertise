@@ -50,7 +50,7 @@
     <%= form.text_field :charge_identifier, id: :booking_charge_identifier %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="btn-container">
+    <%= form.submit 'Book', class:"btn btn-danger btn-book" %>
   </div>
 <% end %>

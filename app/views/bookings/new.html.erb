@@ -1,5 +1,6 @@
-<h1>New Booking with  <%= full_name @expert.profile %></h1>
+<div class="booking-container">
+<h2 class>Book a session with  <%= full_name @expert.profile %></h2>
 
 <%= render 'form', booking: @booking %>
 
-<%= link_to 'Back', bookings_path %>
+</div>

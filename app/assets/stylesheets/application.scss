@@ -1,10 +1,44 @@
 @import "bootstrap";
+
+.black-white-header {
+  background: black;
+  color: white;
+  width: 800px;
+  padding: 15px;
+  margin: 50px auto;
+}
+
+.container {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.btn-blk {
+  background: black;
+  border: 1px solid black;
+}
+.mingle-box {
+  width: 200px;
+  height: 200px;
+  color: white;
+  background: black;
+  padding: 20px;
+  text-align: center;
+}
+
+// Navbar CSS
 .logo {
   margin-right: 15px;
 }
 
 .login {
+  margin: 0 20px;
   color: white;
+} 
+
+.welcome {
+  margin: 0 50px;
+  font-size: 1.2em;
 }
 
 .message-box {
@@ -188,5 +222,30 @@
 }
 
 .support-header {
+  text-align: center;
+}
+
+// Booking page
+
+.booking-container {
+  width: 700px;
+  border: 1px solid black;
+  margin: 20px auto;
+}
+
+.booking-container > h2 {
+  padding: 15px;
+  background: black;
+  color: white;
+  font-size: 1.2em;
+}
+
+.btn-book {
+  background: red;
+  width: 200px;
+  margin: 15px;
+}
+
+.btn-container {
   text-align: center;
 }

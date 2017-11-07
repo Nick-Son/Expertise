@@ -24,7 +24,7 @@
 -->
   <% if @profile.user != current_user %>
     <%= form_with model: @conversation, local: true do |f| %>
-        <%= f.hidden_field :user2_id, value: @profile.id  %>
+        <%= f.hidden_field :user2_id, value: @profile.id  %> 
         <%= f.submit 'Contact', class:"btn btn-primary" %>
     <% end %>
        <%= link_to 'Book Session', new_booking_path(expert_id: @profile.user_id), class:"btn btn-primary" %>

@@ -14,10 +14,10 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :body, 'Enter your message:' %><br>
-      <%= form.text_area :body, id: :message_body, class: "form-control noresize" %>
+      
+      <%= form.text_area :body, id: :message_body, class: "form-control noresize", rows: 6 %>
     </div>
-    <br>
+    
     <div class="actions">
       <%= form.submit 'Send Message', class: "btn btn-primary" %>
     </div>

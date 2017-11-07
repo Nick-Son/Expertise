@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title">Conversation with <%= other_user(@conversation) %></h1> 
-<%= link_to 'Back', conversations_path, class:"btn btn-primary" %>
 
   <div class="messages-container">
+    <div class="messages-header">
+      <h1 class="title">Conversation with <%= other_user(@conversation) %></h1> 
+      <%= link_to 'Back to Inbox', conversations_path, class:"btn btn-primary" %>
+    </div>
+
     <% @messages.each do |message| %>
       <% if message.sender == current_user %>
         <div class="message-box-a">

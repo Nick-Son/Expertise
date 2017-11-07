@@ -50,6 +50,9 @@ gem 'shrine'
 # AWS
 gem 'aws-sdk', '~> 3'
 
+# Stripe
+gem 'stripe'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

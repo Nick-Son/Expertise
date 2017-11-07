@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expert</th>
+      <th>Client</th>
+      <th>Time</th>
+      <th>Duration</th>
+      <th>Rate per hour</th>
+      <th>Location</th>
+      <th>Charge identifier</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.expert %></td>
+        <td><%= booking.client %></td>
+        <td><%= booking.time %></td>
+        <td><%= booking.duration %></td>
+        <td><%= booking.rate_per_hour %></td>
+        <td><%= booking.location %></td>
+        <td><%= booking.charge_identifier %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>

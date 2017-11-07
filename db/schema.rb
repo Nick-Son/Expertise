@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104044236) do
+ActiveRecord::Schema.define(version: 20171107010638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "expert_id"
+    t.bigint "client_id"
+    t.datetime "time"
+    t.integer "duration"
+    t.integer "rate_per_hour"
+    t.string "location"
+    t.string "charge_identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_bookings_on_client_id"
+    t.index ["expert_id"], name: "index_bookings_on_expert_id"
+  end
 
   create_table "conversations", force: :cascade do |t|
     t.bigint "user1_id"
@@ -53,6 +67,20 @@ ActiveRecord::Schema.define(version: 20171104044236) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.bigint "expert_id"
+    t.bigint "customer_id"
+    t.datetime "time"
+    t.integer "duration"
+    t.integer "rate_per_hour"
+    t.string "charge_identifier"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_sessions_on_customer_id"
+    t.index ["expert_id"], name: "index_sessions_on_expert_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -75,9 +103,13 @@ ActiveRecord::Schema.define(version: 20171104044236) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "users", column: "client_id"
+  add_foreign_key "bookings", "users", column: "expert_id"
   add_foreign_key "conversations", "users", column: "user1_id"
   add_foreign_key "conversations", "users", column: "user2_id"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "sessions", "users", column: "customer_id"
+  add_foreign_key "sessions", "users", column: "expert_id"
 end

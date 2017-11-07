@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expert:</strong>
+  <%= @booking.expert %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @booking.client %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @booking.time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @booking.duration %>
+</p>
+
+<p>
+  <strong>Rate per hour:</strong>
+  <%= @booking.rate_per_hour %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @booking.location %>
+</p>
+
+<p>
+  <strong>Charge identifier:</strong>
+  <%= @booking.charge_identifier %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

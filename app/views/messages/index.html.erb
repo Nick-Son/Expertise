@@ -7,13 +7,27 @@
     <% @messages.each do |message| %>
       <% if message.sender == current_user %>
         <div class="message-box-a">
-          <p><%= Profile.find_by(user: message.sender).first_name %>: 
-          <p><%= message.body %></p>
+          <figure class="message-avatar">
+            <% if Profile.find_by(user: message.sender).avatar.present? %>
+              <%= image_tag Profile.find_by(user: message.sender).avatar_url(:thumb) %>
+            <% end %>
+          </figure>
+          <div class="message-content">
+            <h4><%= Profile.find_by(user: message.sender).first_name %>: </h4>
+            <p><%= message.body %></p>
+          </div>  
         </div>
         <% else %>
           <div class="message-box-b">
-            <p><%= Profile.find_by(user: message.sender).first_name %>: 
-            <p><%= message.body %></p>
+            <figure class="message-avatar">
+            <% if Profile.find_by(user: message.sender).avatar.present? %>
+              <%= image_tag Profile.find_by(user: message.sender).avatar_url(:thumb) %>
+            <% end %>
+            </figure>
+            <div class="message-content">
+              <h4><%= Profile.find_by(user: message.sender).first_name %>:</h4> 
+              <p><%= message.body %></p>
+            </div>
           </div>
         <% end %>
     <% end %>

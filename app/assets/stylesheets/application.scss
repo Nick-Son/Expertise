@@ -65,7 +65,7 @@
   margin: 0 auto;
   display: flex;
   // flex-wrap: wrap;
-  max-width: 500px;
+  max-width: 800px;
 }
 
 .convo-box {
@@ -88,22 +88,47 @@
 // Messages css //
 
 .messages-container {
-  width: 700px;
+  width: 900px;
   border: 1px solid dodgerblue;
   padding: 10px;
   margin: 20px auto;
 }
 
+.new-msg-box {
+  text-align: center;
+  width: 600px;
+  margin: auto;
+}
+
+.noresize {
+  resize: none;
+}
+
 .message-box-a {
   border: 1px solid cadetblue;
   padding: 10px;
-  margin: 20px 0 20px 100px;
+  margin: 20px 0 20px 200px;
   width: 500px;
+  display: flex;
+  float: right;
 }
 
 .message-box-b {
+  float: left;
   border: 1px solid coral;
   padding: 10px;
   margin: 20px;
   width: 500px;
+  display: flex;
+}
+
+.message-avatar {
+  width: 250px;
+  height: 250px;
+  background: rgb(207, 203, 203);
+}
+
+.message-content {
+  padding: 10px;
+
 }

@@ -9,13 +9,21 @@ module ApplicationHelper
     end    
   end 
 
-  # Takes the first and last name of a user's profile and combines it to create their full name.
-  # def full_name(user)
-  #   "#{user.profile.first_name} #{user.profile.last_name}"
-  # end
+  
 
+  # Takes the first and last name of a user's profile and combines it to create their full name.
   def full_name(user)
     "#{user.first_name} #{user.last_name}"
   end
+
+  # Displays avatar, if not present, displays a default image
+  # def display_avatar(profile)
+  #   if profile.avatar.present?
+  #     profile.avatar_url(:thumb) 
+  #   else 
+  #     # If not present, display default profile image
+  #     '<img src="<%= asset_url(\'profile.png\') %>" />'
+  #   end 
+  # end 
 
 end

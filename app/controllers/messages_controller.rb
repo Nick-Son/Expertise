@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.where(conversation_id: @conversation)
     @message = Message.new
+    
   end
 
   def create

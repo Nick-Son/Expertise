@@ -10,9 +10,9 @@
         <% if profile.avatar.present? %>
           <%= image_tag profile.avatar_url(:thumb), alt: "Profile photo for #{profile.first_name} #{profile.last_name}" %>
         <% else %>
-        <!-- If not present, display default profile image -->
-        <img src="<%= asset_url('profile.png') %>" />
-          <% end %>  
+          <!-- If not present, display default profile image -->
+          <img src="<%= asset_url('profile.png') %>" />
+        <% end %>  
       </figure>
 
       <h4><%= full_name profile %></h4>

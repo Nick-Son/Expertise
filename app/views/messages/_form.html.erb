@@ -1,5 +1,5 @@
 
-
+<div class="message-form">
   <%= form_with(model: [@conversation, message], local: true) do |form| %>
     <% if message.errors.any? %>
       <div id="error_explanation">
@@ -15,10 +15,11 @@
 
     <div class="field">
       <%= form.label :body, 'Enter your message:' %><br>
-      <%= form.text_area :body, id: :message_body %>
+      <%= form.text_area :body, id: :message_body, class: "form-control noresize" %>
     </div>
     <br>
     <div class="actions">
       <%= form.submit 'Send Message', class: "btn btn-primary" %>
     </div>
   <% end %>
+</div>

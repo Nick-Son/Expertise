@@ -14,7 +14,7 @@
 
   <h2>
     <strong>
-      <%= @profile.first_name %> <%= @profile.last_name %>
+      <%= full_name @profile %>
     </strong>  
   </h2>
 
@@ -27,6 +27,7 @@
         <%= f.hidden_field :user2_id, value: @profile.id  %>
         <%= f.submit 'Contact', class:"btn btn-primary" %>
     <% end %>
+       <%= link_to 'Book Session', new_booking_path(expert_id: @profile.user_id), class:"btn btn-primary" %>
   <% end %>
 
   <p>

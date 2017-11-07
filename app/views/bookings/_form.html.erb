@@ -1,4 +1,7 @@
 <%= form_with(model: booking, local: true) do |form| %>
+  <!-- Hidden Field with :expert_id -->
+  <%= form.hidden_field :expert_id %>
+  
   <% if booking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
@@ -11,6 +14,7 @@
     </div>
   <% end %>
 
+  
   <div class="field">
     <%= form.label :expert_id %>
     <%= form.text_field :expert_id, id: :booking_expert_id %>

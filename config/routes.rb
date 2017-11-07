@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :bookings
   root 'pages#home'
   
   Rails.application.routes.draw do
-  resources :bookings
+    resources :bookings
     devise_for :users, controllers: {
       sessions: 'users/sessions',
       registrations: 'users/registrations'
     }
   end
-
+  
+  resources :bookings
   resources :profiles
   resources :conversations do
     resources :messages

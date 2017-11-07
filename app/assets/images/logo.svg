@@ -1,0 +1,26 @@
+<svg width="250" height="250" viewBox="0 0 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>sign-up-sml</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-11536 -1721)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 11536 1721L 11786 1721L 11786 1971L 11536 1971L 11536 1721Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="sign-up-sml" clip-path="url(#clip-0)">
+<path d="M 11536 1721L 11786 1721L 11786 1971L 11536 1971L 11536 1721Z" fill="#FFFFFF"/>
+<g id="Rectangle">
+<use xlink:href="#path0_fill" transform="translate(11536 1721)"/>
+</g>
+<g id="Rectangle 5.1">
+<use xlink:href="#path1_fill" transform="translate(11566 1751)" fill="#F01919"/>
+</g>
+<g id="Ex">
+<use xlink:href="#path2_fill" transform="translate(11532 1749)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 250 0L 250 256L 0 256L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 161 0L 161 161L 0 161L 0 0Z"/>
+<path id="path2_fill" d="M 60.9869 72.8L 91.7069 72.8L 91.7069 81.32L 60.9869 81.32L 60.9869 110.6L 98.6669 110.6L 98.6669 119L 50.6669 119L 50.6669 36.32L 97.5869 36.32L 96.3869 44.96L 60.9869 44.96L 60.9869 72.8ZM 108.22 119L 131.5 85.64L 110.98 55.76L 122.98 55.76L 137.62 79.28L 152.38 55.76L 164.02 55.76L 143.5 85.16L 166.78 119L 154.54 119L 137.14 91.88L 119.74 119L 108.22 119Z"/>
+</defs>
+</svg>

@@ -1,5 +1,5 @@
 # Expertise
-
+![](docs/images/logo_med.png)
 *slogan/description*
 
 ## Brief

@@ -1,0 +1,8 @@
+<h1>Payment Confirmation</h1>
+
+<h2>for booking #: <em><%= @booking %></em></h2>
+<h3><%= time_tag @booking_date %></h3>
+<h4>Payed by: <%= @client_email %></h4>
+<h4>Payed to: <%= @expert_name %> (<%= @expert_email %>)</h4>
+<h4><strong>Amount payed: </strong></h4>
+<h3>$<%= @amount %></h3>

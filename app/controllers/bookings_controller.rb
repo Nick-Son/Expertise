@@ -57,8 +57,12 @@ class BookingsController < ApplicationController
         
         @booking.charge_identifier = charge.id
         @booking.save
-        redirect_to @booking, notice: 'Booking was successfully payed.'
+
+        TransactionMailer.transaction_email(@booking).deliver_now
+
+        redirect_to @booking, notice: 'Booking was successfully payed. An email confirmation has been sent'
         
+
       rescue Stripe::CardError => e
         flash[:error] = e.message
         redirect_to new_bookings_path(expert_id: booking_params[:expert_id])

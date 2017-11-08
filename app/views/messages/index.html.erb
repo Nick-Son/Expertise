@@ -11,7 +11,7 @@
       <% if message.sender == current_user %>
         <div class="message-box-a">
           <figure class="message-avatar">
-            <% if Profile.find_by(user: message.sender).avatar.present? %>
+            <% if Profile.find_by(user: message.sender).avatar %>
               <%= image_tag Profile.find_by(user: message.sender).avatar_url(:thumb) %>
             <% end %>
           </figure>
@@ -23,7 +23,7 @@
         <% else %>
           <div class="message-box-b">
             <figure class="message-avatar">
-            <% if Profile.find_by(user: message.sender).avatar.present? %>
+            <% if Profile.find_by(user: message.sender).avatar %>
               <%= image_tag Profile.find_by(user: message.sender).avatar_url(:thumb) %>
             <% end %>
             </figure>

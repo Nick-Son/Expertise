@@ -8,6 +8,16 @@
   margin: 50px auto;
 }
 
+.custom-black-button {
+  background: black;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid red;
+}
+
 .container {
   margin-top: 10%;
   text-align: center;
@@ -17,6 +27,13 @@
   background: black;
   border: 1px solid black;
 }
+
+.btn-blk-wide {
+  background: black;
+  border: 1px solid black;
+  width: 150px;
+}
+
 .mingle-box {
   width: 200px;
   height: 200px;
@@ -67,7 +84,12 @@
   text-align: center;
 }
 
-// Profile css //
+// Profile-index
+
+.profiles-index-container {
+  display: flex;
+  padding: 50px;
+}
 
 .profile-box {
   border: 1px solid cadetblue;
@@ -76,17 +98,40 @@
   margin: 20px;
 }
 
+// Profile Show  //
+.profile-page {
+  width: 1500px;
+  margin: 20px auto;
+  border: 1px solid red;
+}
+
 .profile-main-container {
-  width: 700px;
+  float: right;
+  width: 500px;
   border: 1px solid cadetblue;
   padding: 10px;
   margin: 20px;
+}
+
+.profile-main-container > h2 {
+  background: black;
+  color: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.bio-container {
+  padding: 10px;
+  background: black;
+  color: white;
 }
 
 .image-box {
   width: 200px;
   height: 200px;
   margin: 20px;
+  padding: 5px;
+  margin-left: 0;
 }
 
 // Conversation css //
@@ -164,8 +209,8 @@
 }
 
 .message-avatar {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background: rgb(207, 203, 203);
 }
 
@@ -205,13 +250,6 @@
 
 }
 
-// Profile-index
-
-.profiles-index-container {
-  display: flex;
-  padding: 50px;
-}
-
 // Support page
 
 .support-container {
@@ -248,4 +286,31 @@
 
 .btn-container {
   text-align: center;
+}
+
+// Booking show page
+
+.session-container {
+  width: 700px;
+  border: 1px solid red;
+  margin: 20px auto;
+}
+
+.session-container > h2 {
+  padding: 15px;
+  background: black;
+  color: white;
+  font-size: 1.2em;
+}
+
+.session-content-container {
+  width: 500px;
+  margin: 20px auto;
+  display: flex;
+}
+
+.session-information {
+  padding: 15px;
+  width: 300px;
+  border: 1px solid blue;
 }

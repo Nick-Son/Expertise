@@ -1,39 +1,47 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Expert:</strong>
-  <%= @booking.expert %>
-</p>
+<div class="session-container">
+    <h2>
+      Your Session with
+      <%= full_name @booking.expert.profile %>
+    </h2>
 
-<p>
-  <strong>Client:</strong>
-  <%= @booking.client %>
-</p>
+  <div class="session-content-container">
 
-<p>
-  <strong>Time:</strong>
-  <%= @booking.time %>
-</p>
+    <div class="session-information">
+      <p>
+        <strong>Client:</strong>
+        <%= full_name @booking.client.profile %>
+      </p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @booking.duration %>
-</p>
+      <p>
+        <strong>Time:</strong>
+        <%= @booking.time %>
+      </p>
 
-<p>
-  <strong>Rate per hour:</strong>
-  <%= @booking.rate_per_hour %>
-</p>
+      <p>
+        <strong>Price:</strong>
+        <%= @booking.rate_per_hour * @booking.duration %>
+      </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @booking.location %>
-</p>
+      <p>
+        <strong>Location:</strong>
+        <%= @booking.location %>
+      </p>
+    </div>
+  
 
-<p>
-  <strong>Charge identifier:</strong>
-  <%= @booking.charge_identifier %>
-</p>
+    <div class="session-expert-avatar">
+    <!-- If there is an avatar image present in the profile -->
+      <% if @booking.expert.profile.avatar.present? %>
+        <%= image_tag @booking.expert.profile.avatar_url(:thumb) %>
+      <% else %>
+        <!-- If not present, display default profile image -->
+        <img src="<%= asset_url('profile.png') %>" />
+      <% end %> 
+    </div>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+  </div>
+</div>
+
+

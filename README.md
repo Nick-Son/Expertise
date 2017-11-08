@@ -235,6 +235,15 @@ MAILGUN_DOMAIN = domain*****************
 SUPPORT_EMAIL = email@example.com
 ```
 
+Stripe add gem
+```
+????
+```
+
+Add stripe credentials to .env
+```
+
+```
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?

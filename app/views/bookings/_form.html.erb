@@ -1,6 +1,6 @@
 <%= form_with(model: booking, local: true) do |form| %>
   <!-- Hidden Field with :expert_id -->
-  <%= form.hidden_field :expert_id %>
+  <%= form.hidden_field :expert_id, value: @expert.id %>
   
   <% if booking.errors.any? %>
     <div id="error_explanation">
@@ -15,15 +15,6 @@
   <% end %>
 
   
-  <div class="field">
-    <%= form.label :expert_id %>
-    <%= form.text_field :expert_id, id: :booking_expert_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_id %>
-    <%= form.text_field :client_id, id: :booking_client_id %>
-  </div>
 
   <div class="field">
     <%= form.label :time %>
@@ -50,7 +41,26 @@
     <%= form.text_field :charge_identifier, id: :booking_charge_identifier %>
   </div>
 
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: add code here!</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Session"
+          data-amount="500"
+          data-locale="auto">
+  </script>
+  <!--
   <div class="btn-container">
     <%= form.submit 'Book', class:"btn btn-danger btn-book" %>
   </div>
+  -->
 <% end %>

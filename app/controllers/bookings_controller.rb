@@ -22,12 +22,12 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @expert = User.find(params[:expert_id])
-    @client = current_user
+    # @client = current_user
 
     @booking = Booking.new
     #@booking.expert_id = Profile.find(params[:expert_id])
-    @booking.client_id = current_user.id
-    @booking.expert_id = @expert.id 
+    # @booking.client_id = current_user.id
+    # @booking.expert_id = @expert.id 
 
     #@booking.expert = User.find(params[:user_id])
   end
@@ -41,32 +41,34 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
 
-     temp_params = params.require(:booking).permit(:expert_id)
-     @expert = User.find(temp_params[:expert_id])
+    #  temp_params = params.require(:booking).permit(:expert_id)
+    #  @expert = User.find(temp_params[:expert_id])
 
     #@expert = User.find(params[:expert_id])
-    @client = current_user
+    #@client = current_user
+    
+    @booking.client = current_user
+    rate_per_hour = booking_params[:rate_per_hour]
+    duration = booking_params[:duration]
 
-    @booking.client_id = current_user.id
-    @booking.expert_id = @expert.id 
     # Shrine
-  #   @amount = 500
+    @amount = rate_per_hour * duration
   
-  #   customer = Stripe::Customer.create(
-  #     :email => params[:stripeEmail],
-  #     :source  => params[:stripeToken]
-  #   )
+    customer = Stripe::Customer.create(
+      :email => current_user.email,
+      :source  => params[:stripeToken]
+    )
   
-  #   charge = Stripe::Charge.create(
-  #     :customer    => customer.id,
-  #     :amount      => @amount,
-  #     :description => 'Rails Stripe customer',
-  #     :currency    => 'usd'
-  #   )
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => "Session with #{@booking.expert.profile.first_name}",
+      :currency    => 'aud'
+    )
   
-  # rescue Stripe::CardError => e
-  #   flash[:error] = e.message
-  #   redirect_to new_charge_path
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_charge_path
 
     # Redirecting if saved or not saved
     respond_to do |format|
@@ -112,6 +114,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:expert_id, :client_id, :time, :duration, :rate_per_hour, :location, :charge_identifier)
+      params.require(:booking).permit(:expert_id, :time, :duration, :rate_per_hour, :location, :charge_identifier)
     end
 end

@@ -244,6 +244,8 @@ Add stripe credentials to .env
 ```
 
 ```
+
+*Mention all the services the user has to signup for, including mailgun and adding 'authorized recipients'*
 ## Deployment
 Add additional notes about how to deploy this on a live system
 - what commands/steps taken to deploy to heroku?
@@ -264,7 +266,7 @@ Use an API (eg. Omniauth, Geocoding, Maps, other..).
 *Use appropriate gems.*
 *Use environmental variables to protect API keys etc. (dotenv)*
 *Implement a payment system for your product. (e.g. Stripe)*
-Your app must send transactional emails (eg. using Mailgun).
+*Your app must send transactional emails (eg. using Mailgun).*
 *Your app should have an internal user messaging system.*
 Your app will have some type of searching, sorting and/or filtering capability.
 *Your app will have some type of file uploading capability (eg. images).*

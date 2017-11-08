@@ -1,130 +1,77 @@
-#myFooter {
-  background-color: #3c3d41;
-  color: white;
-  padding-top: 30px;
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 45px 50px;
+  margin-top: 80px;
+  
+  position: relative;
+  bottom: 0;
 }
 
-#myFooter .footer-copyright {
-  background-color: #333333;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  text-align: center;
+.footer-distributed .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
 }
 
-#myFooter .row {
-  margin-bottom: 60px;
+/* Footer links */
+
+.footer-distributed p.footer-links{
+	font-size:18px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
 }
 
-#myFooter .navbar-brand {
-  margin-top: 45px;
-  height: 65px;
+.footer-distributed p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
 }
 
-#myFooter .footer-copyright p {
-  margin: 10px;
-  color: #ccc;
+.footer-distributed .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
 }
 
-#myFooter ul {
-  list-style-type: none;
-  padding-left: 0;
-  line-height: 1.7;
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-left: 3px;
 }
 
-#myFooter h5 {
-  font-size: 18px;
-  color: white;
-  font-weight: bold;
-  margin-top: 30px;
-}
+/* If you don't want the footer to be responsive, remove these media queries */
 
-#myFooter h2 a{
-  font-size: 50px;
-  text-align: center;
-  color: #fff;
-}
+@media (max-width: 600px) {
 
-#myFooter a {
-  color: #d2d1d1;
-  text-decoration: none;
-}
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
 
-#myFooter a:hover,
-#myFooter a:focus {
-  text-decoration: none;
-  color: white;
-}
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
 
-#myFooter .social-networks {
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 16px;
-}
-
-#myFooter .social-networks a {
-  font-size: 32px;
-  color: #f9f9f9;
-  padding: 10px;
-  transition: 0.2s;
-}
-
-#myFooter .social-networks a:hover {
-  text-decoration: none;
-}
-
-#myFooter .facebook:hover {
-  color: #0077e2;
-}
-
-#myFooter .google:hover {
-  color: #ef1a1a;
-}
-
-#myFooter .twitter:hover {
-  color: #00aced;
-}
-
-#myFooter .btn {
-  color: white;
-  background-color: #d84b6b;
-  border-radius: 20px;
-  border: none;
-  width: 150px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10px;
-  line-height: 25px;
-}
-
-@media screen and (max-width: 767px) {
-  #myFooter {
-      text-align: center;
-  }
-}
-
-
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
-
-html{
-  height: 100%;
-}
-
-body{
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
-  -webkit-flex-direction: column;
-  height: 100%;
-}
-
-.content{
- flex: 1 0 auto;
- -webkit-flex: 1 0 auto;
- min-height: 200px;
-}
-
-#myFooter{
- flex: 0 0 auto;
- -webkit-flex: 0 0 auto;
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
 }

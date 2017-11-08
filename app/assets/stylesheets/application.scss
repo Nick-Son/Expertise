@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import "footer";
 
+.main-content {
+  min-height:75vh;
+}
+
 .black-white-header {
   background: black;
   color: white;

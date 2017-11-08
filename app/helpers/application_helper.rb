@@ -9,6 +9,14 @@ module ApplicationHelper
     end    
   end 
 
+  def other_user_name(conversation)
+    if conversation.user1 == current_user
+      conversation.user2.profile.first_name
+    else
+      conversation.user1.profile.first_name
+    end    
+  end 
+
   
 
   # Takes the first and last name of a user's profile and combines it to create their full name.

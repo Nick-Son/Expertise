@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get '/support' => 'support#new'
   post '/support' => 'support#create'
+  get '/support/faq' => 'support#faq'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

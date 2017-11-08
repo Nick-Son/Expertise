@@ -326,3 +326,28 @@
   margin: 10px auto;
   text-align: center;
 }
+
+// FAQ
+.faq-main {
+  padding: 10px;
+  margin: 50px auto;
+  width: 800px;
+}
+
+.faq-main > h2 {
+  text-align: center;
+}
+.faq-main > h4 {
+  text-align: center;
+}
+
+.faq-questions {
+  position: absolute;
+  margin: 10px auto;
+  padding-top: 40px;
+  left: 45%;
+}
+
+.faq-questions > ol > li {
+  font-size: 1.3em;
+}

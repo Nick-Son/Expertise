@@ -26,4 +26,9 @@ class SupportController < ApplicationController
       render :new
     end 
   end 
+
+  def faq
+
+  end
+  
 end

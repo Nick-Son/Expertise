@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
     duration = booking_params[:duration]
 
     # Shrine
-    @amount = rate_per_hour * duration
+    @amount = rate_per_hour.to_i * duration.to_i
   
     customer = Stripe::Customer.create(
       :email => current_user.email,
@@ -65,21 +65,25 @@ class BookingsController < ApplicationController
       :description => "Session with #{@booking.expert.profile.first_name}",
       :currency    => 'aud'
     )
-  
+
+    @booking.charge_identifier = charge.id
+    @booking.save
+    redirect_to @booking, notice: 'Booking was successfully created.'
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path
+    redirect_to new_bookings_path(expert_id: @booking.expert.id)
 
     # Redirecting if saved or not saved
-    respond_to do |format|
-      if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
-      else
-        format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @booking.save
+    #     format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+    #     format.json { render :show, status: :created, location: @booking }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @booking.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /bookings/1

@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "footer";
 
 .black-white-header {
   background: black;
@@ -313,4 +314,10 @@
   padding: 15px;
   width: 300px;
   border: 1px solid blue;
+}
+
+// Stripe Button
+.stripe-container {
+  margin: 10px auto;
+  text-align: center;
 }

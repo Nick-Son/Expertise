@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :messages
   end 
 
+  #post '/bookings' 
+
   get '/support' => 'support#new'
   post '/support' => 'support#create'
 

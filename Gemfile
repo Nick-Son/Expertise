@@ -53,6 +53,9 @@ gem 'aws-sdk', '~> 3'
 # Stripe
 gem 'stripe'
 
+# Font Awesome
+gem "font-awesome-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

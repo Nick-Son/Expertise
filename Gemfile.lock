@@ -509,6 +509,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     fastimage (2.1.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -671,6 +673,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   fastimage
+  font-awesome-rails
   image_processing
   jbuilder (~> 2.5)
   jquery-rails

@@ -19,4 +19,10 @@ ExpertiseArea.create! title: 'IoT', description: 'The Internet of things (IoT) i
 ExpertiseArea.create! title: 'Data & Cloud Analytics', description: 'Data analysis, also known as analysis of data or data analytics, is a process of inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, suggesting conclusions, and supporting decision-making.'
 ExpertiseArea.create! title: 'Entrepreneurialism', description: 'Entrepreneurialism is defined as starting new businesses, or getting involved with new ventures or ideas.'
 
-
+# Example Users
+# User.create!(email: 'nonny@test.com', password: 'password').confirm
+# User.create!(email: 'nuri@test.com', password: 'password').confirm
+# User.create!(email: 'aiweiwei@test.com', password: 'password').confirm
+# User.create!(email: 'rachel@test.com', password: 'password').confirm
+# User.create!(email: 'tanehisi@test.com', password: 'password').confirm
+# User.create!(email: 'nick@test.com', password: 'password').confirm

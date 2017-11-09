@@ -247,8 +247,48 @@ Add stripe credentials to .env
 
 *Mention all the services the user has to signup for, including mailgun and adding 'authorized recipients'*
 ## Deployment
-Add additional notes about how to deploy this on a live system
-- what commands/steps taken to deploy to heroku?
+- Make sure you git repo is up to date
+- In the root of the project run
+```
+heroku create
+```
+To confirm that the remote was added to the project run:
+```
+git config --list | grep heroku
+```
+Before deploying to Heroku, you need to add the environment variables from the .env file and add them directly to the heroku project.
+
+Login to your Heroku dashboard and select your project
+<img>
+Click on the settings link at the top right
+<img>
+Then select 'Reveal Config Vars'
+<img>
+In the fields provided, add all the environment variables and their corrisponding keys
+<img>
+
+With those in place, you can now run the command to push the project to Heroku
+```
+git push heroku master
+```
+
+With the project successfully deployed, the next step is to migrate the database
+```
+heroku run rake db:migrate
+```
+
+To ensure that a dyno is running, execute
+```
+heroku ps:scale web=1
+```
+To check the state of the app's dyno, run
+```
+heroku ps
+```
+Finally, to visit the page, simply run
+```
+heroku open
+```
 
 
 ## Acknowledgments

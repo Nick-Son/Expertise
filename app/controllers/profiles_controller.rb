@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.where.not(user:  current_user)
+    @profiles = Profile.where.not(user:  current_user).sort_profiles(params[:sort_by])
   end
 
   # GET /profiles/1
@@ -67,6 +67,8 @@ class ProfilesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

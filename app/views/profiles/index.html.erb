@@ -4,6 +4,22 @@
   <h3>Some of our Experts</h3>
 </div>  
 
+<div class="sort-dropdown">
+  <span class="pull-right">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown">
+        Sort By
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Name', profiles_path(sort_by: "name") %></li>
+        <li><%= link_to 'Rating', profiles_path(sort_by: "highest_rated") %></li>
+        <li><%= link_to 'Newest', profiles_path(sort_by: "new") %></li>
+      </ul>
+    </div>
+  </span>
+</div>
+
 <div class="profiles-index-container">
   <% @profiles.each do |profile| %>
     <!-- make the entire profile container a link to their profile -->

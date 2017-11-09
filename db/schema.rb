@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107010638) do
+ActiveRecord::Schema.define(version: 20171109004258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,13 @@ ActiveRecord::Schema.define(version: 20171107010638) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_expertise", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "expertise_area_id", null: false
+    t.index ["expertise_area_id", "user_id"], name: "index_users_expertise_on_expertise_area_id_and_user_id", unique: true
+    t.index ["user_id", "expertise_area_id"], name: "index_users_expertise_on_user_id_and_expertise_area_id", unique: true
   end
 
   add_foreign_key "bookings", "users", column: "client_id"

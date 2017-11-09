@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Profile-index
+
+.sort-dropdown {
+  text-align: center;
+}
 .div-link {
   text-decoration: none;
   color: black;
@@ -36,8 +40,8 @@
 .profile-main-container {
   justify: right;
   width: 500px;
-  border: 1px solid cadetblue;
-  padding: 10px;
+  border-left: 1px solid cadetblue;
+  padding: 20px;
   margin: 20px;
   flex: 1;
 }
@@ -61,5 +65,5 @@
   height: 200px;
   margin: 20px;
   padding: 5px;
-  margin-right: 0;
+  margin-right: 80px;
 }

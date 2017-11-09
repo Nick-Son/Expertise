@@ -1,7 +1,7 @@
 # Expertise
 ![](docs/images/logo_med.png)
 
-*slogan/description*
+*Connecting teams & individuals with Experts, quickly, efficiently and with urgency*
 
 ## Brief
 *A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies.*
@@ -10,12 +10,13 @@ You are to design, build, deploy and present a Ruby on Rails application. This a
 
 ## What is *'Expertise'*?
 Expertise is an app that connects people to experts, allowing them to book sessions with them quickly and efficiently, bypassing the hassles of finding and organising consultations from consultation companies and allowing people to get expert's advice when urgent
-### The problem
 
+### The problem
+Small teams in need of flexable consulting solutions to integrate with a fast-paced agile development style
 ### The solution
 
 ## Planning
-The planning stage began on paper. This was mainly brainstorming the idea, articulating what I as a user would benifit from a service such as 'Expertse'. The next logical step was user stories. The user stories, written from my own perspective/persona helped outline the minimum needed features and also, solidified the validity of the idea.
+The planning stage began on paper. This was mainly brainstorming the idea, articulating what I as a user would benifit from a service such as 'Expertise'. The next logical step was user stories. The user stories, written from my own perspective/persona helped outline the minimum needed features and also, solidified the validity of the idea.
 
 I sketched some rough designs of the UI and accompanying user journey on paper, allowing me to map out the needed pages and actions needed. This helped better understand what models and controllers that would be needed. I allocated some time to looking at similar and/or competing sites to get an idea of the layout, and what current users expect from an app in this field. I used figma to create higher fidelity designs, informed by the original paper sketches, helping me understand better the required UI components and a better idea of the available space and amount of content that should be displayed.
 
@@ -168,6 +169,7 @@ Ruby 2.4.1
 Rails 5.1
 Postgresql
 Amazon S3 Cloud Storage
+Heroku
 ```
 
 ### Gems/APIs
@@ -195,123 +197,90 @@ gem "font-awesome-rails"
 ```
 
 ### Installing
-Creating the project?
-- First install required gems:
-- Setup postgresql
-- create DB
 
-Included Devise in the Gemfile
-```
-gem 'devise'
-```
-Then run
-```
-bundle install
-```
-Add the following code to the mailer section of /config/environments/development.rb
-```
-config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-```
+Expertise relies on a select amount of services In order to operate. These services require accounts to be created before the application can be properly deployed. In this first section, I will the services that accounts need to be registered for.
 
-Include Rspec in the Gemfile (in group :development, :test)
-```
-gem 'rspec-rails', '~> 3.6'
-```
+Amazon AWS account (for S3 storage) 
+Stripe (for credit card payments)
+Mailgun (for automated emailing systems)
+Heroku (for deployment)
 
-Run bundle install
-```
-bundle install
-```
+Clone the repo to a local machine, and setup postgresql.
 
-Initialise Rspec
-```
-rails generate rspec:install
-```
+If a development database is needed for testing before deployment, it must first be created. Note: it is helpful to make sure postgresql is running. See relevant documentation based on your operating system.
 
-Add dotenv to Gemfile. This must be at the top of the Gemfile
-```
-gem 'dotenv-rails', groups: [:development, :test]
-```
-
-Add shrine gem and it's depedencies
-```
-# Shrine Dependencies
-gem 'fastimage'
-gem 'image_processing'
-gem 'mini_magick'
-gem 'shrine'
-```
-Start Postgres server
-```
-# for Arch Linux
-sudo systemctl start postgresql
-```
-
-Create Database
+To create the database
 ```
 rails db:create
 ```
+As all require gems are included in the gemfile, nothing needs to be added, all that is needed is to run bundle to install the require gems and dependancies
 
-Create User (using devise)
-```
-rails g devise User
-```
-
-Add AWS-sdk gem to the Gemfile
-```
-gem 'aws-sdk', '~> 3'
-```
 ```
 bundle install
 ```
 
-Then set up a new bucket and user.
-Add credentials and bucket information to .env file
-
-Include pundit in Gemfile
+Next, we need to initialize the following gems: Devise, Rspec, Pundit. Run the following commands.
 ```
-gem 'pundit'
-```
-Restart Rails server
-
-*pundit installation info? generating? initializing? policies?*
-
-Include mailgun gem in Gemfile
-```
-gem 'mailgun-ruby', '~>1.1.6'
-```
-Bundle install
-
-Add the following to the development.rb in the mailer section:
-```
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV.fetch('MAILGUN_API_KEY'),
-    domain: ENV.fetch('MAILGUN_DOMAIN'),
-  }
-```
-We need to add our mailgun credentials, and a support email address to our .env file
-```
-MAILGUN_API_KEY = apikey********************
-MAILGUN_DOMAIN = domain*****************
-
-SUPPORT_EMAIL = email@example.com
+rails g devise:install
+rails g pundit:install
+rails g rspec:install
 ```
 
-Stripe add gem
+The database is created, but we haven't migrate. Run:
 ```
-????
-```
-
-Add stripe credentials to .env
+rails db:migrate
 ```
 
+At this point, accounts for all required services must be registered. The next step is to add all require credentials from the following services, and add them to the .env file in the root of the project.
+
+#### Amazon AWS (S3)
+Using Amazon AWS, created a new user. Its important to take note of the user's 'access key ID' and 'secret access key' as these credentials will be needed in later steps.  Next, create a group with the following permissions
+```
+AmazonS3FullAccess
+```
+Add the user to this group.
+
+#### Mailgun
+Using Mailgun, navigate to your account's dashboard and locate the domain section. Select/Create a domain, you wish to use for Expertise, and navigate to the Authorized recipients area and select 'Manage Authorized Recipients'
+
+A valid email address must be authorised and then verified, to receive support emails.
+
+Again, its important to take note of the selected domains and its API key, as they will both be required in later steps.
+
+#### Stripe
+From Stripe's dashboard, navigate, using the left-side menu, to the API section. In this section, you will have access to both a 'Publishable Key' and 'Secret Key'
+
+#### Adding credentials to .env
+The next step is to add these keys to the .env file
 ```
 
-*Mention all the services the user has to signup for, including mailgun and adding 'authorized recipients'*
+S3_ACCESS_KEY_ID = 
+S3_SECRET_ACCESS_KEY = 
+S3_REGION = *region code of S3 bucket
+S3_BUCKET = *name of S3 bucket
+
+MAILGUN_API_KEY = 
+MAILGUN_DOMAIN = 
+
+SUPPORT_EMAIL = *verified email account to be used for support
+
+PUBLISHABLE_KEY = 
+SECRET_KEY = 
+```
+
+As these new environment variables have been added, restarting the Rails server is required.
+
 ## Deployment
-- Make sure you git repo is up to date
-- In the root of the project run
+To deploy to Heroku, ensure that the system you are deploying from has the Heroku toolbelt(CLI) installed and are currently logged in using your Heroku email and password.
+
+If not logged in, run:
+```
+heroku login
+```
+
+Note: Heroku relies on Git, so it is important to ensure that the project is stored in Git.
+
+In the root of the project run the following command to create the app on Heroku:
 ```
 heroku create
 ```
@@ -358,25 +327,19 @@ heroku open
 
 
 ## Challenges
+The main challenge I face during this project was my limited skills with Ruby on Rails. Working on this project highlighted the aspects of Rails that I struggle with, allowed me to pin point, and better articulate my weaknesses as well as outline what I need to work on to better understand Rails and frameworks in general.
+
+I also found it hard, trying to conceptialise the implementation of more challenging features, for example, allowing a user to assign the areas of expertise to their account. Having worked through the problem with Reugen, I feel I have a much better idea of how I will appraoch future problems of a similar nature.
 
 ## Future Features
+With time and skill level being a factor during development, there were many features that I didn't have the opportunity to implement, as well as many future features, I knew weren't feasble given the time and scope of the project.
 
+### Styling
 
+### Review/Rating system
 
-## checklist
-*Create your application using Ruby on Rails.*
-*Demonstrate knowledge of Rails conventions.*
-*Use postgresql database in development.*
-Use an API (eg. Omniauth, Geocoding, Maps, other..).
-*Use appropriate gems.*
-*Use environmental variables to protect API keys etc. (dotenv)*
-*Implement a payment system for your product. (e.g. Stripe)*
-*Your app must send transactional emails (eg. using Mailgun).*
-*Your app should have an internal user messaging system.*
-*Your app will have some type of searching, sorting and/or filtering capability.*
-*Your app will have some type of file uploading capability (eg. images).*
-*Your app will have authentication (eg. Devise, must have full functionality in place).*
-*Your app will have authorisation (users have restrictions on what they can see and edit).*
-Your app will have an admin dashboard for the admin user to administrate the site.
-*Document your application with a README that explains how to setup, configure and use your application.*
+### Social Media Features and Integration
 
+### Content Creation(Simple Blogging Tools) 
+
+### The ability display credentials/examples of prior work

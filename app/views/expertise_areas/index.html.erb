@@ -1,0 +1,15 @@
+<div class="main-content">
+  <h1>Experties</h1>
+  <ul class="list-group">
+    <% @expertise_areas.each do |expertise| %>
+      <li class="list-group-item">
+        <%= expertise.title %>
+        <% if expertise.has_expertise?(current_user) %>
+        | <%= link_to "Remove", remove_expertise_area_path(expertise), method: :delete %>
+        <% else %>
+        | <%= link_to "Add", add_expertise_area_path(expertise) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul> 
+</div>

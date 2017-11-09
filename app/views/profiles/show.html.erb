@@ -13,18 +13,35 @@
       <% end %>  
     </figure>
 
+    <!-- Checking if the User is an expert, if so, display 'Expert!' -->
+    <% if current_user.expertise_areas.count > 0%>
+      <!-- Loop through current_user, displaying all areas of expertise -->
+      <% current_user.expertise_areas.each do |e| %>
+        <%= e.title %> |
+      <%  end %>
+    <% else%>  
+      <%= link_to 'Become an expert', expertise_areas_path, class:"btn btn-primary btn-blk" %>
+    <% end %>
+
+    <!-- User's Name -->
     <h2>
       <strong>
         <%= full_name @profile %>
       </strong>  
     </h2>
 
+    <!-- If the currently viewed profile doesn't belong to the logged in user -->
     <% if @profile.user != current_user %>
+    <!-- display a 'Contact' & 'Book session' button -->
       <%= form_with model: @conversation, local: true do |f| %>
           <%= f.hidden_field :user2_id, value: @profile.id  %> 
           <%= f.submit 'Contact', class:"btn btn-primary" %>
       <% end %>
         <%= link_to 'Book Session', new_booking_path(expert_id: @profile.user_id), class:"btn btn-primary" %>
+    <!-- Otherwise, display a 'Inbox' & 'Edit Profile' button -->    
+    <% else %>
+      <%= link_to 'Inbox', conversations_path, class:"btn btn-primary btn-blk-wide" %> 
+      <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-primary btn-blk-wide" %> 
     <% end %>
 
     <div class="bio-container">
@@ -34,12 +51,14 @@
       </p>
     </div>
 
+    <!-- 
     <% if @profile.user == current_user %>
-      <%= link_to 'Inbox', conversations_path, class:"btn btn-primary btn-lg btn-blk-wide" %> 
-      <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-primary btn-lg btn-blk-wide" %> 
+      <%= link_to 'Inbox', conversations_path, class:"btn btn-primary btn-blk-wide" %> 
+      <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-primary btn-blk-wide" %> 
     <% else %>
-      <%= link_to 'Back', profiles_path, class:"btn btn-primary btn-lg btn-blk" %>
+      <%= link_to 'Back', profiles_path, class:"btn btn-primary btn-blk" %>
     <% end %>  
-    
+    -->
+
   </div>
 </div>

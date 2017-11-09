@@ -16,6 +16,13 @@ Rails.application.routes.draw do
     resources :messages
   end 
 
+  resources :expertise_areas do 
+    member do 
+      get :add
+      delete :remove
+    end
+  end
+
   #post '/bookings' 
 
   get '/support' => 'support#new'

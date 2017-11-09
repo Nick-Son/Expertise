@@ -20,9 +20,18 @@ ExpertiseArea.create! title: 'Data & Cloud Analytics', description: 'Data analys
 ExpertiseArea.create! title: 'Entrepreneurialism', description: 'Entrepreneurialism is defined as starting new businesses, or getting involved with new ventures or ideas.'
 
 # Example Users
-# User.create!(email: 'nonny@test.com', password: 'password').confirm
-# User.create!(email: 'nuri@test.com', password: 'password').confirm
-# User.create!(email: 'aiweiwei@test.com', password: 'password').confirm
-# User.create!(email: 'rachel@test.com', password: 'password').confirm
-# User.create!(email: 'tanehisi@test.com', password: 'password').confirm
-# User.create!(email: 'nick@test.com', password: 'password').confirm
+User.create!(email: 'nonny@example.com', password: 'password').confirm
+User.create!(email: 'nuri@example.com', password: 'password').confirm
+User.create!(email: 'aiweiwei@example.com', password: 'password').confirm
+User.create!(email: 'rachel@example.com', password: 'password').confirm
+User.create!(email: 'tanehisi@example.com', password: 'password').confirm
+User.create!(email: 'allie@example.com', password: 'password').confirm
+User.create!(email: 'sam@example.com', password: 'password').confirm
+
+Profile.create!(user_id: 1, first_name: 'Nonny', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')
+Profile.create!(user_id: 2, first_name: 'Nuri', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')
+Profile.create!(user_id: 3, first_name: 'Ai', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')
+Profile.create!(user_id: 4, first_name: 'Rachel', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')
+Profile.create!(user_id: 5, first_name: 'Ta-Nehisi', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')
+Profile.create!(user_id: 6, first_name: 'Allie', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')    
+Profile.create!(user_id: 7, first_name: 'Sam', last_name: 'Test', bio: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."')    

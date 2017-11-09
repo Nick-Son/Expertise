@@ -1,15 +1,34 @@
-<div class="main-content">
-  <h1>Experties</h1>
-  <ul class="list-group">
-    <% @expertise_areas.each do |expertise| %>
-      <li class="list-group-item">
-        <%= expertise.title %>
-        <% if expertise.has_expertise?(current_user) %>
-        | <%= link_to "Remove", remove_expertise_area_path(expertise), method: :delete %>
-        <% else %>
-        | <%= link_to "Add", add_expertise_area_path(expertise) %>
+<div class="expertise-areas-content">
+  <!-- Header -->
+  <div class="black-white-header">
+    <h3>Areas of Expertise</h3>
+  </div>  
+
+  <!-- Main container -->
+  <div class="expertise-area-container">
+    <!-- Side pannel displaying all current areas of expertise -->
+   
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Current Areas:</strong></li>
+        <% current_user.expertise_areas.each do |e| %>
+          <li class="list-group-item"><%= e.title %></li>
         <% end %>
-      </li>
-    <% end %>
-  </ul> 
+      </ul>
+    
+
+    <!-- Area for users to select areas of expertise -->
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Available Areas:</strong></li>
+      <% @expertise_areas.each do |expertise| %>
+        <li class="list-group-item">
+          <%= expertise.title %>
+          <% if expertise.has_expertise?(current_user) %>
+          | <%= link_to "Remove", remove_expertise_area_path(expertise), method: :delete %>
+          <% else %>
+          | <%= link_to "Add", add_expertise_area_path(expertise) %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul> 
+  </div>
 </div>

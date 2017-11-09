@@ -1,17 +1,29 @@
 @import "bootstrap";
 @import "footer";
 @import "font-awesome";
+@import "expertise_areas";
+@import "profiles";
+@import "messages";
 
 .main-content {
   min-height:75vh;
 }
 
+.profile-page {
+  width: 1500px;
+  margin: 20px auto;
+  border: 1px solid red;
+  display: flex;
+  min-height: 100vh;
+}
+
 .black-white-header {
   background: black;
   color: white;
-  width: 800px;
+  width: 700px;
   padding: 15px;
   margin: 50px auto;
+  text-align: center;
 }
 
 .custom-black-button {
@@ -38,6 +50,7 @@
   background: black;
   border: 1px solid black;
   width: 150px;
+  margin: 5px 0 5px 0;
 }
 
 .mingle-box {
@@ -88,150 +101,6 @@
   margin: 10px;
   width: 300px;
   text-align: center;
-}
-
-// Profile-index
-.div-link {
-  text-decoration: none;
-  color: black;
-}
-.div-link:hover {
-  text-decoration: none;
-  color: black;
-}
-
-.profiles-index-container {
-  display: flex;
-  padding: 50px;
-}
-
-.profile-box {
-  border: 1px solid cadetblue;
-  width: 300px;
-  padding: 10px;
-  margin: 20px;
-}
-
-// Profile Show  //
-.profile-page {
-  width: 1500px;
-  margin: 20px auto;
-  border: 1px solid red;
-}
-
-.profile-main-container {
-  float: right;
-  width: 500px;
-  border: 1px solid cadetblue;
-  padding: 10px;
-  margin: 20px;
-}
-
-.profile-main-container > h2 {
-  background: black;
-  color: white;
-  margin: 20px 0;
-  padding: 10px;
-}
-
-.bio-container {
-  padding: 10px;
-  background: black;
-  color: white;
-  margin-bottom: 50px;
-}
-
-.image-box {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  padding: 5px;
-  margin-left: 0;
-}
-
-// Conversation css //
-.conversations-header {
-  text-align: center;
-  margin: 20px auto;
-  width: 500px;
-}
-
-.conversations-container {
-  margin: 0 auto;
-  display: flex;
-  // flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.convo-box {
-  width: 200px;
-  height: 200px;
-  border: 1px solid cadetblue;
-  margin: 10px;
-  padding: 20px;
-  // flex: 1;
-  border-radius: 5px;
-}
-
-.convo-text {
-  padding: 5px;
-  background: cadetblue;
-  color: white;
-  border-radius: 5px;
-}
-
-// Messages css //
-
-.messages-header {
-  text-align: center;
-  margin: 20px;
-}
-
-.messages-container {
-  width: 900px;
-  border: 1px solid dodgerblue;
-  padding: 10px;
-  margin: 20px auto;
-}
-
-.new-msg-box {
-  text-align: center;
-  width: 600px;
-  margin: 50px auto;
-}
-
-.noresize {
-  resize: none;
-  overflow-x:hidden;
-}
-
-.message-box-a {
-  border: 1px solid cadetblue;
-  padding: 10px;
-  margin: 20px 0 20px 200px;
-  width: 600px;
-  display: flex;
-  float: right;
-}
-
-.message-box-b {
-  float: left;
-  border: 1px solid coral;
-  padding: 10px;
-  margin: 20px;
-  width: 600px;
-  display: flex;
-}
-
-.message-avatar {
-  width: 200px;
-  height: 200px;
-  background: rgb(207, 203, 203);
-}
-
-.message-content {
-  padding: 10px;
-
 }
 
 // Sign up page

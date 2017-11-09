@@ -1,9 +1,28 @@
 <div class="profile-page main-content">
+
+  <div class="users-sessions">
+    <% @bookings.each do |booking| %>
+      <!-- If the current user is part of the booking, either as the expert or the client -->
+      <% if booking.expert == current_user || booking.client == current_user %>
+        <div class="session-container">
+          <h2>Your Session with <%= full_name booking.expert.profile %></h2>
+          <div class="session-information">
+            <p><%= full_name booking.client.profile %></p>
+            <p><strong><%= time_tag booking.time %></strong></p>
+            <p>(<%= pluralize(booking.duration, 'Hour') %>)</p>
+            <p><%= booking.location %></p>
+            <p><%= link_to 'Show', booking %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="profile-main-container">
 
     <p id="notice"><%= notice %></p>
 
-    <figure class="image-box">
+    <figure class="image-box ml-auto">
       <!-- If there is an avatar image present in the profile -->
       <% if @profile.avatar.present? %>
         <%= image_tag @profile.avatar_url(:thumb), alt: "Profile photo for #{@profile.first_name} #{@profile.last_name}" %>
@@ -13,11 +32,11 @@
       <% end %>  
     </figure>
 
-    <!-- Checking if the User is an expert, if so, display 'Expert!' -->
+    <!-- Checking if the User is an expert, if so, display their areas of expertise -->
     <% if current_user.expertise_areas.count > 0%>
       <!-- Loop through current_user, displaying all areas of expertise -->
       <% current_user.expertise_areas.each do |e| %>
-        <%= e.title %> |
+        <h4 class="expertise"><%= e.title %></h4>
       <%  end %>
     <% else%>  
       <%= link_to 'Become an expert', expertise_areas_path, class:"btn btn-primary btn-blk" %>
@@ -41,7 +60,7 @@
     <!-- Otherwise, display a 'Inbox' & 'Edit Profile' button -->    
     <% else %>
       <%= link_to 'Inbox', conversations_path, class:"btn btn-primary btn-blk-wide" %> 
-      <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-primary btn-blk-wide" %> 
+      <%= link_to 'Edit Profile', edit_profile_path(@profile), class:"btn btn-primary btn-blk-wide" %> 
     <% end %>
 
     <div class="bio-container">
@@ -50,15 +69,6 @@
         <%= @profile.bio %>
       </p>
     </div>
-
-    <!-- 
-    <% if @profile.user == current_user %>
-      <%= link_to 'Inbox', conversations_path, class:"btn btn-primary btn-blk-wide" %> 
-      <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-primary btn-blk-wide" %> 
-    <% else %>
-      <%= link_to 'Back', profiles_path, class:"btn btn-primary btn-blk" %>
-    <% end %>  
-    -->
 
   </div>
 </div>

@@ -2,3 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Profile-index
+.div-link {
+  text-decoration: none;
+  color: black;
+}
+.div-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.profiles-index-container {
+  display: flex;
+  padding: 50px;
+}
+
+.profile-box {
+  border: 1px solid cadetblue;
+  width: 300px;
+  padding: 10px;
+  margin: 20px;
+}
+
+// Profile Show  //
+
+
+.user-sessions {
+  margin: 20px;
+  padding: 20px;
+  flex: 1;
+}
+
+.profile-main-container {
+  justify: right;
+  width: 500px;
+  border: 1px solid cadetblue;
+  padding: 10px;
+  margin: 20px;
+  flex: 1;
+}
+
+.profile-main-container > h2 {
+  background: black;
+  color: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.bio-container {
+  padding: 10px;
+  background: black;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.image-box {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  padding: 5px;
+  margin-right: 0;
+}

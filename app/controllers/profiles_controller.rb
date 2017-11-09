@@ -14,6 +14,9 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @conversation = Conversation.new
+    @booking_as_expert = Booking.where(expert: current_user)
+    @booking_as_client = Booking.where(client: current_user)
+    @bookings = @booking_as_client | @booking_as_expert
   end
 
   # GET /profiles/new

@@ -1,0 +1,81 @@
+// Conversation css //
+.conversations-header {
+  text-align: center;
+  margin: 20px auto;
+  width: 500px;
+}
+
+.conversations-container {
+  margin: 0 auto;
+  display: flex;
+  max-width: 800px;
+}
+
+.convo-box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid cadetblue;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.convo-text {
+  padding: 5px;
+  background: cadetblue;
+  color: white;
+  border-radius: 5px;
+}
+
+// Messages css //
+
+.messages-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.messages-container {
+  width: 900px;
+  border: 1px solid dodgerblue;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.new-msg-box {
+  text-align: center;
+  width: 600px;
+  margin: 50px auto;
+}
+
+.noresize {
+  resize: none;
+  overflow-x:hidden;
+}
+
+.message-box-a {
+  border: 1px solid cadetblue;
+  padding: 10px;
+  margin: 20px 0 20px 200px;
+  width: 600px;
+  display: flex;
+  float: right;
+}
+
+.message-box-b {
+  float: left;
+  border: 1px solid coral;
+  padding: 10px;
+  margin: 20px;
+  width: 600px;
+  display: flex;
+}
+
+.message-avatar {
+  width: 200px;
+  height: 200px;
+  background: rgb(207, 203, 203);
+}
+
+.message-content {
+  padding: 10px;
+}

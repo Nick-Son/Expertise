@@ -10,6 +10,9 @@ You are to design, build, deploy and present a Ruby on Rails application. This a
 
 ## What is *'Expertise'*?
 Expertise is an app that connects people to experts, allowing them to book sessions with them quickly and efficiently, bypassing the hassles of finding and organising consultations from consultation companies and allowing people to get expert's advice when urgent
+### The problem
+
+### The solution
 
 ## Planning
 The planning stage began on paper. This was mainly brainstorming the idea, articulating what I as a user would benifit from a service such as 'Expertse'. The next logical step was user stories. The user stories, written from my own perspective/persona helped outline the minimum needed features and also, solidified the validity of the idea.
@@ -24,6 +27,58 @@ I planned out the models and thier attributes in trello, and when I was confiden
 https://trello.com/b/n4atPOiS/rails-project
 
 ## User Stories
+In order to: receive urgent feedback on my edit, as an amateur filmmaker I want to find someone with Expertise in video editing ,that can review my work and give valid feedback
+
+In order to: Prepare myself for studying Web Development As a: future student I want to: Find an experienced Web Dev to inform me the tools I need and communities I should be a part of
+
+In order to: Advise me on how to progress toward a career in cyber security As a: person not sure what path to take I want to: Speak with a Cyber Security expert and get advice based on *my* current situation
+
+In order to: Better plan my business/start-up venture As a: entrepreneur I want to: Run my idea past someone who has succeeded in the same area I want to get into
+
+In order to: Make sure the person I want to get consoltation from is indeed qualified As a: prospective user I want to: See the person's qualifications, and linkedin profile to assertain wheather they are indeed qualified.
+
+In order to: Organise a meet up with an expert As a: person who wants advice I want to: Be able to message the person directly
+
+In order to: Get an idea of how good/benificial this expert is. As a: person in need of their Expertise I want to: See what other users have said about their experiences
+
+In order to: save time messageing potential experts about their availability As a: busy person with a strict schedule I want to: See an experts general availability on thier profile
+
+In order to: Know if the expert is the kind of person I want to get advice from As a: potential user I want to: read a short bio on this person, to learn about thier accomplishments and get an idea about their personality
+
+In order to: save time As a: budget conscious person I want to: see the experts price rate on their profile
+
+In order to: organise a meeting with an expert in my area As a: user who needs a face to face meeting I want to: see what experts are in my area/city
+
+In order to: organise a meeting with an expert not in my area As a: user who can't travel far I want to: be able to video chat with the expert.
+
+In order to: Make some side income As a: an expert in a field with spare time I want to: offer my time to advise/consult people in need of my Expertise
+
+In order to: Ensure I have flexibility with my time As a: an expert in a field with flexable spare time I want to: offer my time to advise as a "once-off" basis, or not be locked into consulting/advising on a regular basis.
+
+In order to: prove to people that I have the talent to back up my claims As a: an experienced filmmaker I want to: be able to display my work on my profile for visitors to see
+
+In order to: bring people into my profile As an: expert new to the site I want: people to see that my services are available on other social media networks **An example of this is: A person on youtube who produces content about X, might have a link in the description linking to thier profile "Want personalised advice from me about X? get in touch on....."
+
+In order to: build up my profile As a: new expert to the site I want to: show how many successful sessions I've given
+
+In order to: narrow down potential experts As a: Person in need of advice I want to: search and filter experts by their expertise
+
+In order to: Start getting advice/guidance from an expert As a: potential user I want to: Be able to create an account
+
+In order to: build by profile and reputation in the community  As a: New expert I want to: be able to contribute to the community, writing mini blog posts that are viewable by all users
+
+In order to: Bring people to the site, As the creator of the site I want there to be: content that can access and be linked to externally. People who may not use the site may find the content interesting to read.
+
+In order to:  Keep track of my sessions, As an: Active expert, I want to: see all my upcoming sessions of the week/month
+
+In order to: Book and confirm my session, As a: user in need of advice, I want to: be able to make an online payment.
+
+In order to: Confirm that I have initiated and payed for a session, As a user of the site I want to: Receive an email confirming the time/date and my payment info
+
+In order to understand the context of a message, as a user, I want to see the previous messages in a conversation with another user
+
+In order to better connect with my community, as a user, I want to be able to upload a photo of myself
+
 
 ## Data Structure
 ![](docs/images/erd.png)
@@ -45,21 +100,21 @@ https://trello.com/b/n4atPOiS/rails-project
 - avatar_data
 ```
 
-#### Expertise
+#### ExpertiseArea
 ```
 - expert
 - title
 - description
 ```
 
-#### Session
+#### Booking
 ```
 - date
-- expert
-- user *need better name*
+- expert_id
+- client_id
 - location
 - duration
-- charge
+- charge_identifier
 ```
 
 #### Conversation
@@ -93,7 +148,7 @@ As mentioned above, I allocated some time to researching competing sites and thi
 <link to pintrest?>
 
 ## Wireframes
-<image of wireframes>
+![](docs/images/wireframes.jpg)
 
 My approach to designing the wireframes was to create wireframes with the components/features I believed I could ship in the alloted time, while designing it with a style I would like the finished product to look like if time wasn't an issue. The hybrid approach allowed me to better understand the user journey, omitting uneeded luxuries I wouldn't be able to deliver due to skill or time constraints, and also have the aethetic style inform the needed content and its placement on the page. I began with mobile design first, using a temporary monochromatic colour scheme to save time and also get a better idea of how to organise white space.
 
@@ -117,18 +172,26 @@ Amazon S3 Cloud Storage
 
 ### Gems/APIs
 ```
-gem ‘dotenv-rails’, groups: [:development, :test]
-gem ‘aws-sdk’, ‘~> 3’
-gem ‘devise’
-gem ‘bootstrap’, ‘~> 4.0.0.beta’
-gem ‘jquery-rails’
-gem ‘fastimage’
-gem ‘image_processing’
-gem ‘mini_magick’
-gem ‘shrine’
-gem ‘geocoder’
-gem ‘rspec-rails’, ‘~> 3.6’
+gem 'devise'
 gem 'pundit'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'jquery-rails'
+gem 'mailgun-ruby', '~>1.1.6'
+
+# Shrine & Dependencies
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'shrine'
+
+# AWS
+gem 'aws-sdk', '~> 3'
+
+# Stripe
+gem 'stripe'
+
+# Font Awesome
+gem "font-awesome-rails"
 ```
 
 ### Installing
@@ -259,13 +322,16 @@ git config --list | grep heroku
 Before deploying to Heroku, you need to add the environment variables from the .env file and add them directly to the heroku project.
 
 Login to your Heroku dashboard and select your project
-<img>
+![](docs/images/heroku-01jpg)
+
 Click on the settings link at the top right
-<img>
+![](docs/images/heroku-02.jpg)
+
 Then select 'Reveal Config Vars'
-<img>
+![](docs/images/heroku-03.jpg)
+
 In the fields provided, add all the environment variables and their corrisponding keys
-<img>
+![](docs/images/heroku-04.jpg)
 
 With those in place, you can now run the command to push the project to Heroku
 ```
@@ -291,12 +357,11 @@ heroku open
 ```
 
 
-## Acknowledgments
+## Challenges
 
-  <div class="field">
-    <%= form.label :user2_id, "whom do you want to message?" %>
-    <%= form.collection_select :user2_id, User.where.not(id: current_user), :id, :email, id: :conversation_user2_id %>
-  </div>
+## Future Features
+
+
 
 ## checklist
 *Create your application using Ruby on Rails.*
@@ -308,10 +373,10 @@ Use an API (eg. Omniauth, Geocoding, Maps, other..).
 *Implement a payment system for your product. (e.g. Stripe)*
 *Your app must send transactional emails (eg. using Mailgun).*
 *Your app should have an internal user messaging system.*
-Your app will have some type of searching, sorting and/or filtering capability.
+*Your app will have some type of searching, sorting and/or filtering capability.*
 *Your app will have some type of file uploading capability (eg. images).*
 *Your app will have authentication (eg. Devise, must have full functionality in place).*
-Your app will have authorisation (users have restrictions on what they can see and edit).
+*Your app will have authorisation (users have restrictions on what they can see and edit).*
 Your app will have an admin dashboard for the admin user to administrate the site.
 *Document your application with a README that explains how to setup, configure and use your application.*
 

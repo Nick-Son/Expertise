@@ -2,11 +2,17 @@ class ProfilePolicy < ApplicationPolicy
 
 
   def update?
-    if  user.profile == record.user
-      true
-    else
-      false
-    end 
+    return true if user.present? && user == profile.user
   end
+
+  def destroy?
+    return true if user.present? && user == profile.user
+  end
+
+  private
+
+    def profile
+      record
+    end
 
 end 

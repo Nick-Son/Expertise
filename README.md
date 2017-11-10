@@ -9,12 +9,12 @@
 You are to design, build, deploy and present a Ruby on Rails application. This app will cater to two markets that your app brings together (think Ebay with buyers & sellers, AirBnB with travellers & house owners, Uber with travellers & drivers).
 
 ## What is *'Expertise'*?
-Expertise is an app that connects people to experts, allowing them to book sessions with them quickly and efficiently, bypassing the hassles of finding and organising consultations from consultation companies and allowing people to get expert's advice when urgent
+Expertise is an app that connects people to experts, allowing them to book sessions with them quickly and efficiently, bypassing the hassles of finding and organising consultations from consultation companies and allowing people to get expert's advice with urgency.
 
 ### The problem
-Small teams in need of flexable consulting solutions to integrate with a fast-paced agile development style
+There currently is no available option to easily find expert advice and/or guidance with urgency, without locating companies or agencies. The need for urgent advice, during any given stage of a project is important in delivering a product on time, or ensuring that the project is headed in the best possible direction, where time is a primary factor.
 ### The solution
-
+A centalized, 'Uberfication' of the consulting industry, allowing experts in various fields or multidisciplinary experts to provide their time and services to teams and/or individuals in need of urgent advice. This flexibility is more condusive to an agile and adaptive project orientated work environment. It also offers the ability to find advice in multiple fields without the need to join multiple ecosystems, as frequently, projects in all areas of industry can span multiple fields. It also allows individual experts to have a wealth of experiences and opportunities to add to their portfolio, they might not heretofore had access to.
 ## Planning
 The planning stage began on paper. This was mainly brainstorming the idea, articulating what I as a user would benifit from a service such as 'Expertise'. The next logical step was user stories. The user stories, written from my own perspective/persona helped outline the minimum needed features and also, solidified the validity of the idea.
 
@@ -334,12 +334,12 @@ I also found it hard, trying to conceptialise the implementation of more challen
 ## Future Features
 With time and skill level being a factor during development, there were many features that I didn't have the opportunity to implement, as well as many future features, I knew weren't feasble given the time and scope of the project.
 
-### Styling
+#### Styling
 
-### Review/Rating system
+#### Review/Rating system
 
-### Social Media Features and Integration
+#### Social Media Features and Integration
 
-### Content Creation(Simple Blogging Tools) 
+#### Content Creation(Simple Blogging Tools) 
 
-### The ability display credentials/examples of prior work
+#### The ability display credentials/examples of prior work
